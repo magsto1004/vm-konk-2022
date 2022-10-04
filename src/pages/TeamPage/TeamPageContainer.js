@@ -3,7 +3,7 @@ import DesktopNavbar from "../DesktopNavbar";
 import MobileNavbar from "../MobileNavbar";
 import TeamContainer from "./components/TeamContainer";
 
-const TeamPageContainer = () => {
+const TeamPageContainer = (props) => {
   let width = window.innerWidth;
   let nav = null;
   if (width > 768) {
@@ -15,7 +15,11 @@ const TeamPageContainer = () => {
   return (
     <div>
       {nav}
-      <TeamContainer />
+      <TeamContainer
+        team={props.team}
+        bio={props.bio}
+        prediction={props.prediction}
+      />
     </div>
   );
 };
